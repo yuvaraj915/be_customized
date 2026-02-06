@@ -176,19 +176,27 @@ header {
 
 /* ================= MOBILE ================= */
 @media (max-width: 600px) {
-  .service-box {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+
+  .search-container {
+    top: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+    justify-content: flex-end;
+  }
+
+  #searchBox {
+    width: 100%;
+  }
+
+  #searchBtn {
+    width: auto;
   }
 
   .service {
     width: 100%;
   }
 
-  #searchBox {
-    width: 100%;
-  }
+ 
 }
 </style>
 </head>
@@ -330,5 +338,6 @@ function toggleMenu() {
 
 </body>
 </html>
+
 
 
