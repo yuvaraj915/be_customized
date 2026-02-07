@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order Details</title>
+<title>Order via WhatsApp</title>
 
 <style>
 body{
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
   background:#f2f2f2;
   padding:30px;
 }
@@ -30,10 +30,6 @@ body{
   border:1px solid #ddd;
 }
 
-.form-box h2{
-  margin-bottom:15px;
-}
-
 .form-box input,
 .form-box textarea,
 .form-box button{
@@ -44,18 +40,22 @@ body{
   border:1px solid #ccc;
 }
 
-.form-box button{
-  background:#000;
+.order-btn{
+  background:#25D366;
   color:#fff;
   border:none;
+  font-size:16px;
   cursor:pointer;
 }
 
-.form-box button:hover{
-  background:#333;
+.back-btn{
+  background:#000;
+  color:#fff;
+  border:none;
+  font-size:15px;
+  cursor:pointer;
 }
 
-/* Mobile */
 @media(max-width:768px){
   .container{
     flex-direction:column;
@@ -68,47 +68,67 @@ body{
 
 <div class="container">
 
-  <!-- SELECTED IMAGE -->
+  <!-- Selected Image -->
   <div class="image-box">
     <img id="selectedImage" alt="Selected Template">
   </div>
 
-  <!-- ORDER FORM -->
+  <!-- Order Form -->
   <div class="form-box">
-    <h2>Order Details</h2>
+    <h2>Place Order</h2>
 
-    <form action="https://formsubmit.co/waagh4681@gmail.com" method="POST">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="tel" id="mobile" placeholder="Mobile Number" required>
+    <textarea id="details" placeholder="Printing details"></textarea>
 
-      <!-- hidden image field -->
-      <input type="hidden" name="Selected Template Image" id="imageField">
+    <button class="order-btn" onclick="sendWhatsApp()">Order via WhatsApp</button>
 
-      <input type="text" name="Name" placeholder="Full Name" required>
-      <input type="tel" name="Mobile" placeholder="Mobile Number" required>
-      <input type="email" name="Email" placeholder="Email">
-      <textarea name="Printing Details" rows="4" placeholder="Enter printing details"></textarea>
-
-      <!-- optional settings -->
-      <input type="hidden" name="_subject" value="New Printing Order">
-      <input type="hidden" name="_captcha" value="false">
-
-      <button type="submit">Submit Order</button>
-    </form>
+    <!-- BACK TO HOME BUTTON -->
+    <button class="back-btn" onclick="goHome()">⬅ Back to Home</button>
   </div>
 
 </div>
 
 <script>
-// Get selected image from URL
 const params = new URLSearchParams(window.location.search);
 const img = params.get("img");
 
-if(img){
-  document.getElementById("selectedImage").src = img;
-  document.getElementById("imageField").value = img;
+if(!img){
+  alert("Please select a template first");
+  window.location.href = "templates.html";
+}
+
+document.getElementById("selectedImage").src = img;
+
+function sendWhatsApp(){
+  const name = document.getElementById("name").value;
+  const mobile = document.getElementById("mobile").value;
+  const details = document.getElementById("details").value;
+
+  if(!name || !mobile){
+    alert("Please fill required fields");
+    return;
+  }
+
+  const message =
+`🖨️ New Printing Order
+👤 Name: ${name}
+📞 Mobile: ${mobile}
+📝 Details: ${details}
+
+🖼️ Selected Design:
+${img}`;
+
+  const phone = "91XXXXXXXXXX"; // OWNER WHATSAPP NUMBER
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+function goHome(){
+  window.location.href = "templates.html";
 }
 </script>
 
 </body>
-
 </html>
-
