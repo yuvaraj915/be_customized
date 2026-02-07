@@ -214,6 +214,19 @@ footer{
     grid-template-columns:1fr;
   }
 }
+  .whatsapp-top-icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 15px;
+  background: transparent;
+}
+
+.whatsapp-top-icon img {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
 </style>
 </head>
 
@@ -227,6 +240,11 @@ footer{
     <span onclick="toggleMenu()"><img src="hamburger.png" width="28"></span>
   </div>
 </header>
+  <div class="whatsapp-top-icon">
+  <a href="https://wa.me/8431452355" target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp">
+  </a>
+</div>
 <div class="menu" id="menu">
   <span class="close-btn" onclick="toggleMenu()">✖</span>
   <a href="index.html">Home</a>
@@ -371,3 +389,4 @@ function liveSearch(){
 
 </body>
 </html>
+
