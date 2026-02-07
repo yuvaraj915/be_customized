@@ -239,6 +239,14 @@ footer{
     <span onclick="toggleMenu()"><img src="hamburger.png" width="28"></span>
   </div>
 </header>
+<div class="menu" id="menu">
+  <span class="close-btn" onclick="toggleMenu()">✖</span>
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+  <a href="#">Help</a>
+</div>
+
 <body>
 <section class="services">
   <h2>Our Services</h2>
@@ -353,4 +361,9 @@ footer{
   </div>
 </footer>
 </body>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
 </html>
