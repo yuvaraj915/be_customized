@@ -5,11 +5,6 @@
 <title>Contact Information</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 body{
@@ -179,13 +174,108 @@ header {
   --card-bg: #1a1a22;
   --text-light: #f5f5f5;
 }
+footer{
+  background:#fffaf6;
+  padding:40px 25px;
+  color:#6d5c54;
+}
 
+.footer-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:40px;
+}
+
+/* Brand */
+.brand{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.brand img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:1px solid #e3d5cc;
+}
+
+.brand h2{
+  margin:0;
+  font-weight:500;
+}
+
+.brand p{
+  margin:4px 0;
+  font-size:14px;
+}
+
+.highlight{
+  color:#b04a2f;
+}
+
+/* Section Titles */
+.footer-title{
+  font-size:18px;
+  font-weight:500;
+  margin-bottom:15px;
+}
+
+/* Links */
+.footer-links a{
+  display:block;
+  text-decoration:none;
+  color:#6d5c54;
+  font-size:15px;
+  margin-bottom:10px;
+}
+
+.footer-links a:hover{
+  color:#b04a2f;
+}
+
+/* Admin */
+.admin{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+  font-size:15px;
+}
+
+/* Contact */
+.contact a{
+  display:block;
+  text-decoration:none;
+  color:#6d5c54;
+  margin-bottom:12px;
+  font-size:15px;
+}
+
+.contact a span{
+  color:#b04a2f;
+}
+
+.social{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+}
 </style>
-</head>
 
   <header>
   <img src="be_customiselogo.jpeg" width="50">
-  <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'; color: black;">Be Customised <br><p style="color: lightseagreen; font-size: 15px">   </t> Be Unique * Be Creative<br></p><p style="font-size: 12px; color: #333;">Founded & Managed by Chiranthan MS</p></h1>
+  <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'; color: black; ">Be Customised <br><p style="color: lightseagreen; font-size: 15px">   </t> Be Unique • Be Creative<br></p><p style="font-size: 12px; color: #333;">Founded & Managed by Chiranthan MS</p></h1>
   <div class="header-icons">
     <a href="login.html"><img src="user.png" width="22"></a>
     <span onclick="toggleMenu()"><img src="hamburger.png" width="28"></span>
@@ -194,9 +284,9 @@ header {
 
 <div class="menu" id="menu">
   <span class="close-btn" onclick="toggleMenu()">✖</span>
-  <a href="#">Home</a>
-  <a href="#">Services</a>
-  <a href="#">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
   <a href="#">Help</a>
 </div>
 <body>
@@ -309,4 +399,56 @@ function toggleMenu() {
 </script>
 
 </body>
+<footer>
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div>
+      <div class="brand">
+        <img src="be_customiselogo.jpeg" alt="Be Customised">
+        <div>
+          <h2>Be.Customised</h2>
+          <p>Be Unique • Be Creative</p>
+        </div>
+      </div>
+
+      <p style="margin-top:15px;">Founded & Managed by Chiranthan MS</p>
+      <p class="highlight">All Over India</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <div class="footer-links">
+        <a href="#">Gallery</a>
+        <a href="#">Products</a>
+        <a href="services.html">Services</a>
+       <a href="contact.html">Contact</a>
+      </div>
+
+      
+    </div>
+
+    <!-- Contact -->
+    <div class="contact">
+      <div class="footer-title">Contact</div>
+
+      <a href="tel:+919019195022">
+        +91 90191 95022 <span>(Call)</span>
+      </a>
+
+      <a href="https://wa.me/919844709684" target="_blank">
+        +91 98447 09684 <span>(WhatsApp)</span>
+      </a>
+
+      <div class="social">
+        <i class="fa-brands fa-instagram"></i>
+        <a href="https://www.instagram.com/chiru_m_s" target="_blank">
+          @chiru_m_s
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
 </html>
