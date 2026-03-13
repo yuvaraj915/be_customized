@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>be customised gallery</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+
+:root {
+  --bg-dark: #0f0f14;
+  --gold: #d4af37;
+  --card-bg: #1a1a22;
+  --text-light: #f5f5f5;
+}
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+       
+
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+
+
+/* ================= HEADER ================= */
+header {
+  background: white;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-icons {
+  display: flex;
+  gap: 18px;
+}
+
+/* ================= SLIDE MENU ================= */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  height: 100vh;
+  width: 260px;
+  background: var(--card-bg);
+  padding-top: 80px;
+  transition: right 0.4s ease;
+  z-index: 999;
+}
+
+.menu.active { right: 0; }
+
+.menu a {
+  padding: 16px 24px;
+  color: var(--text-light);
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 22px;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+ 
+
+footer{
+  background:#fffaf6;
+  padding:40px 25px;
+  color:#6d5c54;
+}
+
+.footer-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:40px;
+}
+
+/* Brand */
+.brand{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.brand img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:1px solid #e3d5cc;
+}
+
+.brand h2{
+  margin:0;
+  font-weight:500;
+}
+
+.brand p{
+  margin:4px 0;
+  font-size:14px;
+}
+
+.highlight{
+  color:lightseagreen;
+}
+
+/* Section Titles */
+.footer-title{
+  font-size:18px;
+  font-weight:500;
+  margin-bottom:15px;
+}
+
+/* Links */
+.footer-links a{
+  display:block;
+  text-decoration:none;
+  color:#6d5c54;
+  font-size:15px;
+  margin-bottom:10px;
+}
+
+.footer-links a:hover{
+  color:lightseagreen;
+}
+
+/* Admin */
+.admin{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+  font-size:15px;
+}
+
+/* Contact */
+.contact a{
+  display:block;
+  text-decoration:none;
+  color:#6d5c54;
+  margin-bottom:12px;
+  font-size:15px;
+}
+
+.contact a span{
+  color:lightseagreen;
+}
+
+.social{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+}
+
+/* new body */
+body{
+  background:#f6f6f6;
+}
+
+/* HERO SECTION */
+.hero{
+  background:#fff;
+  padding:20px;
+}
+.hero-inner{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+.hero-left img{
+  width:100%;
+  max-width:420px;
+}
+.hero-right h1{
+  font-size:34px;
+  color:#c2185b;
+}
+.hero-right h1 span{
+  color:#000;
+}
+.hero-right p{
+  margin:15px 0;
+  font-size:16px;
+}
+.hero-right button{
+  background:#ffcc00;
+  border:none;
+  padding:12px 22px;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* TRUST BAR */
+.trust-bar{
+  background:#eee;
+  display:flex;
+  justify-content:space-around;
+  padding:10px;
+  font-size:14px;
+  margin-top:15px;
+}
+
+/* PROMO CARDS */
+.promos{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  padding:20px;
+}
+.promo{
+  background:#fff;
+  display:flex;
+  align-items:center;
+  padding:15px;
+  border-radius:10px;
+}
+.promo img{
+  width:90px;
+  margin-right:15px;
+}
+.promo h3{
+  font-size:16px;
+}
+.promo span{
+  color: lightseagreen;
+  font-weight:bold;
+}
+
+/* CATEGORY GRID */
+.categories{
+  background:#fff;
+  padding:25px;
+}
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  text-align:center;
+}
+.cat img{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  border:3px solid lightseagreen;
+  padding:5px;
+}
+.cat h4{
+  margin-top:8px;
+  font-size:14px;
+}
+.cat p{
+  font-size:12px;
+  color:#666;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-inner{
+    flex-direction:column;
+  }
+  .promos{
+    grid-template-columns:1fr;
+  }
+  .cat-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/*style for mp4 video*/
+.video style{
+  display:flex;
+  justify-content:right;
+  padding: 20px;
+  outline: 4px solid lightseagreen;
+
+}
+
+</style>
+<header>
+  <img src="be_customiselogo.jpeg" width="50">
+ <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'; color: black;">Be Customised <br><p style="color: lightseagreen; font-size: 15px">Be Unique • Be Creative<br></p><p style="font-size: 12px; color: #333;">Founded & Managed by Chiranthan MS</p></h1>
+  <div class="header-icons">
+    <a href="login.html"><img src="user.png" width="22"></a>
+    <span onclick="toggleMenu()"><img src="hamburger.png" width="28"></span>
+  </div>
+</header>
+
+
+</head>
+
+<body>
+    <div class="menu" id="menu">
+  <span class="close-btn" onclick="toggleMenu()">✖</span>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+  <a href="#">Digital works</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="#">Portfolio/Our Works</a>
+</div>
+
+<!-- Adding video to gallery -->
+ <div class="video style">
+ <video width="400" height="600" controls>
+   <source src="videos/Product video shoot.mp4" type="video/mp4">
+ </video>
+ </div>
+    
+</body>
+<footer>
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div>
+      <div class="brand">
+        <img src="be_customiselogo.jpeg" alt="Be Customised">
+        <div>
+          <h2>Be.Customised</h2>
+          <p>Be Unique • Be Creative</p>
+        </div>
+      </div>
+
+      <p style="margin-top:15px;">Founded & Managed by Chiranthan MS</p>
+      <p class="highlight">All Over India</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#">Products</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+     
+    </div>
+
+    <!-- Contact -->
+    <div class="contact">
+      <div class="footer-title">Contact</div>
+
+      <a href="tel:+919019195022">
+        +91 90191 95022 <span>(Call)</span>
+      </a>
+
+      <a href="https://wa.me/919844709684" target="_blank">
+        +91 98447 09684 <span>(WhatsApp)</span>
+      </a>
+
+      <div class="social">
+        <i class="fa-brands fa-instagram"></i>
+        <a href="https://www.instagram.com/chiru_m_s" target="_blank">
+        Instagram : @chiru_m_s
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+</html>
